@@ -1,7 +1,17 @@
 from zhipuai import ZhipuAI
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+api_key = os.getenv('API_KEY')
+
+'''
+同步调用
+
+调用后即可一次性获得最终结果
+'''
 # 填写您自己的APIKey
-client = ZhipuAI(api_key="65d03c7c1b214f7a168d7dd9cbbb5922.4wwyBLDTYE6pxLt9") 
+client = ZhipuAI(api_key=api_key) 
 response = client.chat.completions.create(
     # 填写需要调用的模型名称
     model="glm-4",
@@ -14,3 +24,44 @@ response = client.chat.completions.create(
     ],
 )
 print(response.choices[0].message)
+
+
+'''
+异步调用
+
+调用后会立即返回一个任务 ID ，然后用任务ID查询调用结果（根据模型和参数的不同，通常需要等待10-30秒才能得到最终结果） 
+'''
+# 请填写您自己的APIKey
+client = ZhipuAI(api_key=api_key)
+response = client.chat.asyncCompletions.create(
+    # 填写需要调用的模型名称
+    model="glm-4", 
+    messages=[
+        {
+            "role": "user",
+            "content": "请你作为童话故事大王，写一篇短篇童话故事，故事的主题是要永远保持一颗善良的心，要能够激发儿童的学习兴趣和想象力，同时也能够帮助儿童更好地理解和接受故事中所蕴含的道理和价值观。"
+        }
+    ],
+)
+print(response)
+print('任务 ID 为：{}，请求 ID 为：{}，模型为：{}，任务状态为：{}'.format(response.id, response.request_id, response.model, response.task_status))
+
+
+'''
+ SSE 调用
+
+调用后可以流式的实时获取到结果直到结束
+'''
+# 请填写您自己的APIKey
+client = ZhipuAI(api_key=api_key)
+response = client.chat.completions.create(
+    model="glm-4",  # 填写需要调用的模型名称
+    messages=[
+        {"role": "system", "content": "你是一个乐于解答各种问题的助手，你的任务是为用户提供专业、准确、有见地的建议。"},
+        {"role": "user", "content": "我对太阳系的行星非常感兴趣，特别是土星。请提供关于土星的基本信息，包括其大小、组成、环系统和任何独特的天文现象。"},
+    ],
+    stream=True,
+)
+
+for chunk in response:
+    print(chunk.choices[0].delta)
