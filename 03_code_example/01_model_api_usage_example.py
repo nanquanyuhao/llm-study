@@ -61,6 +61,7 @@ response = client.chat.completions.create(
             }
         }
     ],
+    # 控制模型如何选择函数调用，auto 为默认值，此时模型根据上下文信息自行选择是否返回函数调用（目前函数调用仅支持 auto 模式）
     tool_choice="auto",
 )
 print(response.choices[0].message)
