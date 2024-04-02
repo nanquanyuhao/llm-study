@@ -22,7 +22,7 @@ response = client.chat.completions.create(
           {
             "type": "image_url",
             "image_url": {
-                "url" : "https://static001.infoq.cn/resource/image/5f/6e/5f36806314a58af989b842a83dbc426e.jpg"
+                "url" : "https://wx2.sinaimg.cn/mw690/003nChGVgy1hobm73fbwbj635s2dcnpd02.jpg"
             }
           }
         ]

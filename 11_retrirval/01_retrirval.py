@@ -14,7 +14,7 @@ client = ZhipuAI(api_key=api_key)
 response = client.chat.completions.create(
     model="glm-4",
     messages=[
-        {"role": "user", "content": "产品打造"},
+        {"role": "user", "content": "Java 虚拟机中有几种引用类型"},
     ],
     tools=[
             {
