@@ -22,7 +22,7 @@ response = client.chat.completions.create(
           {
             "type": "image_url",
             "image_url": {
-                "url" : "https://wx2.sinaimg.cn/mw690/003nChGVgy1hobm73fbwbj635s2dcnpd02.jpg"
+                "url" : "https://dashscope.oss-cn-beijing.aliyuncs.com/images/dog_and_girl.jpeg"
             }
           }
         ]
