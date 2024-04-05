@@ -5,6 +5,9 @@ import os
 load_dotenv()
 api_key = os.getenv('API_KEY')
 
+'''
+注意：每次调用需要 0.25 元
+'''
 client = ZhipuAI(api_key=api_key)
 response = client.images.generations(
     model="cogview-3", 
