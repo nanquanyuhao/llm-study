@@ -8,6 +8,9 @@ import os
 load_dotenv()
 dashscope.api_key = os.getenv('DASHSCOPE_API_KEY')
 
+'''
+当前示例为通过 prompt 调用的方式
+'''
 def sample_sync_call():
 
     prompt_text = '用萝卜、土豆、茄子做饭，给我个菜谱。'
