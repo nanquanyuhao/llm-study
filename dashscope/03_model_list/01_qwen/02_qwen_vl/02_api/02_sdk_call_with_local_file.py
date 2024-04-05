@@ -10,8 +10,8 @@ def call_with_local_file():
        linux&mac file schema: file:///home/images/test.png
        windows file schema: file://D:/images/abc.png
     """
-    local_file_path1 = 'file://D:/code/github/llm-study/dashscope/03_model_list/01_qwen/02_qwen_vl/02_api/image/doctor.jpeg'
-    local_file_path2 = 'file://D:/code/github/llm-study/dashscope/03_model_list/01_qwen/02_qwen_vl/02_api/image/weixin_room.jpg'
+    local_file_path1 = 'file://D:/code/github/llm-study/dashscope/03_model_list/01_qwen/02_qwen_vl/02_api/images/doctor.jpeg'
+    local_file_path2 = 'file://D:/code/github/llm-study/dashscope/03_model_list/01_qwen/02_qwen_vl/02_api/images/weixin_room.jpg'
     
     messages = [{
         'role': 'system',
