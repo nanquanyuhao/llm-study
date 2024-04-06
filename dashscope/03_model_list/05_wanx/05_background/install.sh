@@ -1,0 +1,1 @@
+pip install controlnet-aux==0.0.7
