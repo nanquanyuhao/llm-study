@@ -8,6 +8,7 @@ dashscope.api_key = os.getenv('DASHSCOPE_API_KEY')
 
 def simple_multimodal_conversation_call():
     """Simple single round multimodal conversation call.
+        20240412，使用公司笔记本可以正常
     """
     messages = [
         {

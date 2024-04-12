@@ -8,6 +8,7 @@ api_key = os.getenv('DASHSCOPE_API_KEY')
 
 '''情况说明
     目前来看，服务端可能出了问题，对于语音解析有问题
+    20240412，使用公司笔记本可以正常
 '''
 def conversation_call():
     """Sample of multiple rounds of conversation.
