@@ -7,12 +7,11 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-api_key = os.getenv('DASHSCOPE_API_KEY')
+dashscope.api_key = os.getenv('DASHSCOPE_API_KEY')
 
 response = Generation.call(
     model='sanle-v1',
-    prompt='请简要介绍一下浙江大学',
-    api_key=api_key
+    prompt='请简要介绍一下浙江大学'
 )
 # The response status_code is HTTPStatus.OK indicate success,
 # otherwise indicate request is failed, you can get error code
