@@ -6,9 +6,6 @@ import os
 load_dotenv()
 dashscope.api_key = os.getenv('DASHSCOPE_API_KEY')
 
-'''权限申请中，报错如下：
-    Request id: 1c766288-4815-92c4-b522-4901e13c0ba9, Status code: 403, error code: InvalidPlugin.AccessDenied, error message: Plugin ["text_to_image"] access denied.
-'''
 def call_with_messages():
     plugins = {'text_to_image': {}}  # choose the desired plugin(s).
     messages = [{'role': 'system', 'content': 'You are a helpful assistant.'},
